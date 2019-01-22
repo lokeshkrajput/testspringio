@@ -31,14 +31,14 @@ public class TestSpringIoApplication implements CommandLineRunner{
 		
 		
 		
-		List<Employee>  empList = Arrays.asList(new Employee[] {new Employee("1", "lokesh_rajput")});
-		empRepo.save(new Employer("1", "Persi", empList));
+		List<Employee>  empList = Arrays.asList(new Employee[] {new Employee(1, "lokesh_rajput")});
+		empRepo.save(new Employer(1, "Persi", empList));
 		
-		empList = Arrays.asList(new Employee[] {new Employee("2", "lokesh.rajput")});
-		empRepo.save(new Employer("2", "GL", empList));
+		empList = Arrays.asList(new Employee[] {new Employee(2, "lokesh.rajput")});
+		empRepo.save(new Employer(2, "GL", empList));
 		
-		empList = Arrays.asList(new Employee[] {new Employee("3", "lrajput")});
-		empRepo.save(new Employer("3", "Sapient", empList));
+		empList = Arrays.asList(new Employee[] {new Employee(3, "lrajput")});
+		empRepo.save(new Employer(3, "Sapient", empList));
 		
 		
 		empRepo.findAll().forEach(i -> System.out.println(i));

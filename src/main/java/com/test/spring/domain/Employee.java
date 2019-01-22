@@ -5,40 +5,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Employee {
-	
-	@Id 
+
+	@Id
 	@GeneratedValue
-	private String id;
-	
+	private Integer id;
+
 	@Column
 	private String name;
-	
+
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + "]";
 	}
 
-
-
-	public Employee(String id, String name) {
+	public Employee(Integer id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -49,6 +47,5 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
 }

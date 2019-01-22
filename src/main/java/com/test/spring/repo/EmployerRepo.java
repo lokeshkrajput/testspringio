@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import com.test.spring.domain.Employer;
 
 
-public interface EmployerRepo extends CrudRepository<Employer, String>{
+public interface EmployerRepo extends CrudRepository<Employer, Integer>{
 	
 	public List<Employer> findByEmployeesName(@Param("name") String name);
 	

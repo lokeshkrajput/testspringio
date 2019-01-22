@@ -13,45 +13,41 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Employer {
-	
-	@Id 
+
+	@Id
 	@GeneratedValue
-	private String id;
-	
+	private Integer id;
+
 	@Column
 	private String name;
-	
+
 	public Employer() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Employer(String id, String name, List<Employee> employees) {
+
+	public Employer(Integer id, String name, List<Employee> employees) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.employees = employees;
 	}
-	
-	
 
 	@Override
 	public String toString() {
 		return "Employer [id=" + id + ", name=" + name + ", employees=" + employees + "]";
 	}
 
-
-
 	@Column
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="EmpId")
-	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "EmpId")
+
 	private List<Employee> employees;
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
